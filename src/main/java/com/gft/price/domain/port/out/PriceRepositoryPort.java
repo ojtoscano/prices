@@ -7,5 +7,5 @@ import com.gft.price.domain.model.PriceQuery;
 
 public interface PriceRepositoryPort {
 
-    Optional<Price> findApplicablePrice(PriceQuery priceQuery);    
+    Optional<Price> findApplicablePrice(PriceQuery priceQuery);
 }
