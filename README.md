@@ -73,6 +73,8 @@ curl "http://localhost:8080/api/v1/prices?applicationDate=2020-06-15T10:00:00&pr
 curl "http://localhost:8080/api/v1/prices?applicationDate=2020-06-16T21:00:00&productId=35455&brandId=1"
 ```
 
+También está disponible una [colección de Postman](postman/Prices-Service.postman_collection.json) con estos cinco escenarios y validaciones automáticas de la respuesta.
+
 ## Arquitectura
 
 El proyecto utiliza una arquitectura hexagonal, separando la lógica de negocio de los detalles externos como HTTP y la persistencia.
