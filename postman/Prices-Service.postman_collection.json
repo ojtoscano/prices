@@ -1,0 +1,165 @@
+{
+  "info": {
+    "name": "Prices Service - Enunciado",
+    "description": "Casos de prueba solicitados para consultar el precio aplicable de la marca 1 y el producto 35455.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080"
+    }
+  ],
+  "item": [
+    {
+      "name": "Escenario 1 - 14/06/2020 10:00 - tarifa 1",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/prices?applicationDate=2020-06-14T10:00:00&productId=35455&brandId=1",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "v1", "prices"],
+          "query": [
+            { "key": "applicationDate", "value": "2020-06-14T10:00:00" },
+            { "key": "productId", "value": "35455" },
+            { "key": "brandId", "value": "1" }
+          ]
+        }
+      },
+      "event": [{ "listen": "test", "script": { "exec": [
+        "pm.test('responde con 200 OK', function () { pm.response.to.have.status(200); });",
+        "const body = pm.response.json();",
+        "pm.test('devuelve la tarifa 1 y el precio 35.50 EUR', function () {",
+        "    pm.expect(body.productId).to.eql(35455);",
+        "    pm.expect(body.brandId).to.eql(1);",
+        "    pm.expect(body.tariffId).to.eql(1);",
+        "    pm.expect(body.amount).to.eql(35.5);",
+        "    pm.expect(body.currencyCode).to.eql('EUR');",
+        "    pm.expect(body.startDate).to.eql('2020-06-14T00:00:00');",
+        "    pm.expect(body.endDate).to.eql('2020-12-31T23:59:59');",
+        "});"
+      ], "type": "text/javascript" } }]
+    },
+    {
+      "name": "Escenario 2 - 14/06/2020 16:00 - tarifa 2",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/prices?applicationDate=2020-06-14T16:00:00&productId=35455&brandId=1",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "v1", "prices"],
+          "query": [
+            { "key": "applicationDate", "value": "2020-06-14T16:00:00" },
+            { "key": "productId", "value": "35455" },
+            { "key": "brandId", "value": "1" }
+          ]
+        }
+      },
+      "event": [{ "listen": "test", "script": { "exec": [
+        "pm.test('responde con 200 OK', function () { pm.response.to.have.status(200); });",
+        "const body = pm.response.json();",
+        "pm.test('devuelve la tarifa 2 y el precio 25.45 EUR', function () {",
+        "    pm.expect(body.productId).to.eql(35455);",
+        "    pm.expect(body.brandId).to.eql(1);",
+        "    pm.expect(body.tariffId).to.eql(2);",
+        "    pm.expect(body.amount).to.eql(25.45);",
+        "    pm.expect(body.currencyCode).to.eql('EUR');",
+        "    pm.expect(body.startDate).to.eql('2020-06-14T15:00:00');",
+        "    pm.expect(body.endDate).to.eql('2020-06-14T18:30:00');",
+        "});"
+      ], "type": "text/javascript" } }]
+    },
+    {
+      "name": "Escenario 3 - 14/06/2020 21:00 - tarifa 1",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/prices?applicationDate=2020-06-14T21:00:00&productId=35455&brandId=1",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "v1", "prices"],
+          "query": [
+            { "key": "applicationDate", "value": "2020-06-14T21:00:00" },
+            { "key": "productId", "value": "35455" },
+            { "key": "brandId", "value": "1" }
+          ]
+        }
+      },
+      "event": [{ "listen": "test", "script": { "exec": [
+        "pm.test('responde con 200 OK', function () { pm.response.to.have.status(200); });",
+        "const body = pm.response.json();",
+        "pm.test('devuelve la tarifa 1 y el precio 35.50 EUR', function () {",
+        "    pm.expect(body.productId).to.eql(35455);",
+        "    pm.expect(body.brandId).to.eql(1);",
+        "    pm.expect(body.tariffId).to.eql(1);",
+        "    pm.expect(body.amount).to.eql(35.5);",
+        "    pm.expect(body.currencyCode).to.eql('EUR');",
+        "    pm.expect(body.startDate).to.eql('2020-06-14T00:00:00');",
+        "    pm.expect(body.endDate).to.eql('2020-12-31T23:59:59');",
+        "});"
+      ], "type": "text/javascript" } }]
+    },
+    {
+      "name": "Escenario 4 - 15/06/2020 10:00 - tarifa 3",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/prices?applicationDate=2020-06-15T10:00:00&productId=35455&brandId=1",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "v1", "prices"],
+          "query": [
+            { "key": "applicationDate", "value": "2020-06-15T10:00:00" },
+            { "key": "productId", "value": "35455" },
+            { "key": "brandId", "value": "1" }
+          ]
+        }
+      },
+      "event": [{ "listen": "test", "script": { "exec": [
+        "pm.test('responde con 200 OK', function () { pm.response.to.have.status(200); });",
+        "const body = pm.response.json();",
+        "pm.test('devuelve la tarifa 3 y el precio 30.50 EUR', function () {",
+        "    pm.expect(body.productId).to.eql(35455);",
+        "    pm.expect(body.brandId).to.eql(1);",
+        "    pm.expect(body.tariffId).to.eql(3);",
+        "    pm.expect(body.amount).to.eql(30.5);",
+        "    pm.expect(body.currencyCode).to.eql('EUR');",
+        "    pm.expect(body.startDate).to.eql('2020-06-15T00:00:00');",
+        "    pm.expect(body.endDate).to.eql('2020-06-15T11:00:00');",
+        "});"
+      ], "type": "text/javascript" } }]
+    },
+    {
+      "name": "Escenario 5 - 16/06/2020 21:00 - tarifa 4",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/prices?applicationDate=2020-06-16T21:00:00&productId=35455&brandId=1",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "v1", "prices"],
+          "query": [
+            { "key": "applicationDate", "value": "2020-06-16T21:00:00" },
+            { "key": "productId", "value": "35455" },
+            { "key": "brandId", "value": "1" }
+          ]
+        }
+      },
+      "event": [{ "listen": "test", "script": { "exec": [
+        "pm.test('responde con 200 OK', function () { pm.response.to.have.status(200); });",
+        "const body = pm.response.json();",
+        "pm.test('devuelve la tarifa 4 y el precio 38.95 EUR', function () {",
+        "    pm.expect(body.productId).to.eql(35455);",
+        "    pm.expect(body.brandId).to.eql(1);",
+        "    pm.expect(body.tariffId).to.eql(4);",
+        "    pm.expect(body.amount).to.eql(38.95);",
+        "    pm.expect(body.currencyCode).to.eql('EUR');",
+        "    pm.expect(body.startDate).to.eql('2020-06-15T16:00:00');",
+        "    pm.expect(body.endDate).to.eql('2020-12-31T23:59:59');",
+        "});"
+      ], "type": "text/javascript" } }]
+    }
+  ]
+}
