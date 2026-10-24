@@ -1,14 +1,14 @@
-package com.gft.price.infrastructure.adapter.out.persistence.entity;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+package com.gft.price.infrastructure.adapter.out.persistence;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import com.gft.price.domain.model.Price;
+import com.gft.price.infrastructure.adapter.out.persistence.entity.PriceEntity;
 
 class PriceEntityMapperTest {
 

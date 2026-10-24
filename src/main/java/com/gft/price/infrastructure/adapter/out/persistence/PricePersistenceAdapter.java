@@ -5,7 +5,6 @@ import java.util.Optional;
 import com.gft.price.domain.model.Price;
 import com.gft.price.domain.model.PriceQuery;
 import com.gft.price.domain.port.out.PriceRepositoryPort;
-import com.gft.price.infrastructure.adapter.out.persistence.entity.PriceEntityMapper;
 import com.gft.price.infrastructure.adapter.out.persistence.repository.PriceJpaRepository;
 
 import lombok.extern.slf4j.Slf4j;

@@ -1,6 +1,7 @@
-package com.gft.price.infrastructure.adapter.out.persistence.entity;
+package com.gft.price.infrastructure.adapter.out.persistence;
 
 import com.gft.price.domain.model.Price;
+import com.gft.price.infrastructure.adapter.out.persistence.entity.PriceEntity;
 
 public class PriceEntityMapper {
 
