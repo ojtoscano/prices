@@ -10,7 +10,7 @@ import lombok.Getter;
 @Getter
 public class Price {
 
-    private final Long brandId;
+    private final Integer brandId;
     private final Integer productId;
     private final Integer tariffId;
     private final LocalDateTime startDate;
@@ -19,10 +19,10 @@ public class Price {
     private final BigDecimal amount;
     private final String currencyCode;
 
-    @Builder 
-    public Price(Long brandId, Integer productId, Integer tariffId, 
-        LocalDateTime startDate, LocalDateTime endDate, Integer priority, 
-        BigDecimal amount, String currencyCode) {
+    @Builder
+    public Price(Integer brandId, Integer productId, Integer tariffId,
+            LocalDateTime startDate, LocalDateTime endDate, Integer priority,
+            BigDecimal amount, String currencyCode) {
         this.brandId = Objects.requireNonNull(brandId, "Brand ID cannot be null");
         this.productId = Objects.requireNonNull(productId, "Product ID cannot be null");
         this.tariffId = Objects.requireNonNull(tariffId, "Tariff ID cannot be null");
