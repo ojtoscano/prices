@@ -53,11 +53,12 @@ public class PriceController {
             content = @Content(schema = @Schema(implementation = ErrorResponse.class)))
     public ResponseEntity<PriceResponse> getApplicablePrice(
             @Parameter(description = "Application date in ISO format (yyyy-MM-dd'T'HH:mm:ss)", example = "2020-06-14T10:00:00")
-            @RequestParam @NotNull @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime applicationDate,
+            @RequestParam(name = "applicationDate") @NotNull
+            @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime applicationDate,
             @Parameter(description = "Product identifier", example = "35455")
-            @RequestParam @Positive Integer productId,
+            @RequestParam(name = "productId") @Positive Integer productId,
             @Parameter(description = "Brand identifier", example = "1")
-            @RequestParam @Positive Integer brandId) {
+            @RequestParam(name = "brandId") @Positive Integer brandId) {
 
         log.info("Incoming price request: productId={}, brandId={}, applicationDate={}", productId, brandId, applicationDate);
 
@@ -68,5 +69,4 @@ public class PriceController {
 
         return ResponseEntity.ok(PriceResponseMapper.toResponse(price));
     }
-    
 }

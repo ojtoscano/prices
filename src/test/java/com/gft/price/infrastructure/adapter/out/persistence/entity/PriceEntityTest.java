@@ -1,6 +1,7 @@
 package com.gft.price.infrastructure.adapter.out.persistence.entity;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -35,7 +36,7 @@ class PriceEntityTest {
     void shouldProvideNoArgsConstructorForJpa() {
         PriceEntity entity = new PriceEntity();
 
-        assertEquals(null, entity.getId());
-        assertEquals(null, entity.getAmount());
+        assertNull(entity.getId());
+        assertNull(entity.getAmount());
     }
 }
