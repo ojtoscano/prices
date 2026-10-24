@@ -3,6 +3,7 @@ package com.gft.price.infrastructure.adapter.out.persistence.repository;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 import org.junit.jupiter.api.DisplayName;
@@ -10,7 +11,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
+@SpringBootTest(properties = "spring.datasource.url=jdbc:h2:mem:price-repository-test;DB_CLOSE_DELAY=-1")
 class PriceJpaRepositoryTest {
 
     @Autowired
@@ -24,7 +25,7 @@ class PriceJpaRepositoryTest {
 
         assertTrue(result.isPresent());
         assertEquals(2, result.get().getTariffId());
-        assertEquals(25.45, result.get().getAmount().doubleValue());
+        assertEquals(new BigDecimal("25.45"), result.get().getAmount());
     }
 
     @Test
