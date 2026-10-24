@@ -6,10 +6,10 @@ import java.time.LocalDateTime;
 import lombok.Builder;
 import lombok.Getter;
 
-@Getter 
+@Getter
 @Builder
 public class PriceResponse {
-    
+
     private final Integer brandId;
     private final Integer productId;
     private final Integer tariffId;

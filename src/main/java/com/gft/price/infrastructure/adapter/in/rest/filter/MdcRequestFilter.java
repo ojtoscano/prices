@@ -31,5 +31,4 @@ public class MdcRequestFilter extends OncePerRequestFilter {
             MDC.clear();
         }
     }
-    
 }

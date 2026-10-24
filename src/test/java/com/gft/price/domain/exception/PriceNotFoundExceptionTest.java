@@ -2,6 +2,7 @@ package com.gft.price.domain.exception;
 
 import java.time.LocalDateTime;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -9,6 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class PriceNotFoundExceptionTest {
 
     @Test
+    @DisplayName("debe incluir la marca, el producto y la fecha en el mensaje")
     void shouldIncludeBrandIdProductIdAndApplicationDateInMessage() {
         Integer brandId = 1;
         Integer productId = 35455;
